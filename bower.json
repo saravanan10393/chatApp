@@ -1,0 +1,23 @@
+{
+  "name": "chatApp",
+  "description": "simple one 2 one chat app",
+  "main": "app.js",
+  "authors": [
+    "Saravanan <saravanan.ramupillai@orangescape.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-toastr": "^2.1.1",
+    "bootstrap-material-design": "^4.0.2"
+  }
+}
