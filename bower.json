@@ -19,6 +19,8 @@
     "angular": "^1.5.8",
     "angular-toastr": "^2.1.1",
     "bootstrap-material-design": "^4.0.2",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "angular-animate": "^1.5.8",
+    "angular-tiny-eventemitter": "^1.2.0"
   }
 }

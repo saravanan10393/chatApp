@@ -1,24 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="chatApp">
     <head>
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+       
         <!-- lib css -->
-        <link rel="stylesheet" href="bower/boostrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="bower/boostrap-material-design/dist/boostrap-material-design.css">
-        <script src="bower/angular-toastr/dist/angular-toastr.css"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="./bower/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="./libs/bootstrap-material/css/bootstrap-material-design.css">
+        <link rel="stylesheet" href="./libs/bootstrap-material/css/ripples.css">
+        <link rel="stylesheet" href="./bower/angular-toastr/dist/angular-toastr.css">
+        <link rel="stylesheet" href="./bower/tether/dist/css/tether.css">
+        <link rel="stylesheet" href="./libs/material-ripple/jquery.materialripple.css">
+
+        <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
-        
+        <div class="app-container" ui-view>
+            
+        </div>
         <!--libs files-->
-        <script src="bower/jquery/dist/jquery.min.js"></script>
-        <script src="bower/bootstrap/dist/js/bootsrap.js"></script>
-        <script src="bower/bootstrap-material-design/dist/boostrap-material-design.iife.js"></script>
-        <script src="bower/angular/angular.js"></script>
-        <script src="bower/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower/angular-toastr/dist/angular-toastr.js"></script>
-        <script src="bower/angular-toastr/dist/angular-toastr.tpls.js"></script>
+        <script src="./bower/jquery/dist/jquery.min.js"></script>
+        <script src="./bower/tether/dist/js/tether.js"></script>
+        <script src="./bower/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="./libs/bootstrap-material/js/material.js"></script>
+        <script src="./libs/bootstrap-material/js/ripples.js"></script>
+        <script src="./libs/material-ripple/jquery.materialripple.js"></script>
+        <script>
+                $.material.init();
+                $('.jripple').materialripple();
+        </script>
+
+        <script src="./bower/angular/angular.js"></script>
+        <script src="./bower/angular-animate/angular-animate.js"></script>
+        <script src="./bower/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="./bower/angular-toastr/dist/angular-toastr.js"></script>
+        <script src="./bower/angular-toastr/dist/angular-toastr.tpls.js"></script>
+        <script src="./bower/angular-tiny-eventemitter/dist/angular-tiny-eventemitter.js"></script>
+
+        <!--app files-->
+        <script src="./modules/app.js"></script>
+        <script src="./modules/app.config.js"></script>
+        <script src="./modules/register/user.controller.js"></script>
+        <script src="./modules/register/user.service.js"></script>
+        <script src="./modules/shared/socket.service.js"></script>
+       
     </body>
 </html>
