@@ -7,6 +7,6 @@
         'toastr',
         'rt.eventemitter'
     ]).constant('urls',{
-        apiUrl : "http://localhost:3000/api/"
+        apiUrl : "https://little-chat.herokuapp.com/api/"
     });
 })();
