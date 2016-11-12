@@ -1,0 +1,50 @@
+<div class="ch-card content-wrapper row">
+	<div class="leftsec col-md-3 p-0">
+		<div class="header row m-0">
+			<div class="user left p-0">
+				<div class="user-avatar">
+					<img src="../images/test.jpg" alt="profile-image" class="avatar-image">
+				</div>
+			</div>
+			<div class="controlls left row m-0 p-0">
+				<div class="item col-md-6 btn btn-default m-0 jripple"><i class="material-icons">chat</i></div>
+				<div class="item col-md-6 btn btn-default m-0 jripple"><i class="material-icons">more_vert</i></div>
+			</div>
+		</div>
+		<!--<div class="notifications"></div>-->
+		<div class="user-list">
+			<div class="list-item row pt-0 m-0" ng-if="HomeCtrl.UserService.userList.length > 0" ng-repeat="user in HomeCtrl.UserService.userList" ng-click="HomeCtrl.gotoChat(user.id)">
+				<div class="chat-avatar left">
+					<div class="avatar">
+						<img class="avatar-image" ng-if="!user.avatar" src="../images/test.jpg" alt="profile-image">
+                        <img class="avatar-image" ng-if="user.avatar" ng-src="{{user.avatar}}" alt="profile-image">
+					</div>
+				</div>
+				<div class="chat-body left">
+					<div class="chat-main">
+						<p class="chat-title" ng-bind="user.name"</p>
+					</div>
+					<div class="chat-secondary">
+						<p class="chat-hint">Will come back you later</p>
+					</div>
+				</div>
+			</div>
+            <div class="list-item row pt-0 m-0" ng-if="HomeCtrl.userList.length == 0">
+				<div class="chat-avatar left">
+					<div class="avatar">
+						<img class="avatar-image"  src="../images/test.jpg" alt="profile-image">
+					</div>
+				</div>
+				<div class="chat-body left">
+					<div class="chat-main">
+						<p class="chat-title"> No user present </p>
+					</div>
+					<div class="chat-secondary">
+						<p class="chat-hint">Invite them</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="rightsec col-md-9 p-0" ui-view></div>
+</div>

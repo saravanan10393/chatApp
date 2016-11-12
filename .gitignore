@@ -46,3 +46,6 @@ jspm_packages
 #remove  bower foler
 public/bower
 .bowerrc
+
+# remove sass cache
+.sass-cache

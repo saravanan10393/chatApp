@@ -21,6 +21,7 @@
     "bootstrap-material-design": "^4.0.2",
     "angular-ui-router": "^0.3.1",
     "angular-animate": "^1.5.8",
-    "angular-tiny-eventemitter": "^1.2.0"
+    "angular-tiny-eventemitter": "^1.2.0",
+    "underscore": "^1.8.3"
   }
 }

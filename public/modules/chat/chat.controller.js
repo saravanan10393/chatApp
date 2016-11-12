@@ -3,15 +3,15 @@
 
     angular
         .module('chatApp')
-        .controller('ChatController', ChatController);
+        .controller('chatController', ChatController);
 
-    ChatController.$inject = ['$scope', '$state', '$stateParam','userService', 'socket', 'ChatService'];
-    function ChatController($scope, $state, $stateParam, UserService, socket, ChatService) {
+    ChatController.$inject = ['$scope', '$state', '$stateParams','userService', 'ChatService', 'socketService'];
+    function ChatController($scope, $state, $stateParams, UserService, ChatService, socket) {
         var vm = this;
         vm.messages = ChatService.messages;
 
-        if($stateParam.userId){
-            vm.to = _.where(UserService.userList, {id : $stateParam.userId});
+        if($stateParams.userId){
+            vm.to = _.findWhere(UserService.userList, {id : $stateParams.userId});
         }
 
         vm.from = UserService.currentUser;
@@ -22,19 +22,28 @@
             if(response.data.error){
                 toastr.error(response.data.message,'Error');
             }else{
-                vm.messages = response.data.messages;
+                vm.messages = response.data;
             }
         });
 
         vm.send = function(text){
+            vm.txtMsg = null;
             var message = {
                 from : vm.from.id,
                 to: vm.to.id,
-                message : text
+                message : text,
+                sendTime : Date.now()
             };
-            ChatService.send(message);
+            ChatService.sendMessage(message);
             this.messages.push(message);
         };
-        
+
+        socket.on('message', function(message){
+            console.log('socket message ',message);
+            if(message.to == vm.from.id){
+                vm.messages.push(message);
+                $scope.$apply();
+            }
+        });
     }
 })();

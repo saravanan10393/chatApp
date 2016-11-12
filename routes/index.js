@@ -16,7 +16,8 @@ router.post('/login',function(req, res, next){
 });
 
 router.get('/messages', (req, res) => {
-  db.Message.get(req.params.from, req.params.to, (messages) => res.send(messages));
+  console.log('incoming query params ',req.query);
+  db.Message.get(req.query.from, req.query.to, (messages) => res.send(messages));
 });
 
 module.exports = router;

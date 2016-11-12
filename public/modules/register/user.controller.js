@@ -5,8 +5,8 @@
         .module('chatApp')
         .controller('userController', UserController);
 
-    UserController.$inject = ['$scope','$state', 'toastr'];
-    function UserController($scope, $state, toastr) {
+    UserController.$inject = ['$scope','$state', 'toastr', 'userService'];
+    function UserController($scope, $state, toastr, userService) {
         var vm = this;
         
         vm.login = login;
@@ -21,7 +21,7 @@
                     return;
                 }
                 userService.currentUser = data;
-                $state.go('/home');
+                $state.go('home');
                 
             },function(error){
                 userService.currentUser = null;
@@ -37,7 +37,7 @@
                     return;
                 }
                 userService.currentUser = data;
-                $state.go('/home');
+                $state.go('home');
             },function(error){
                 userService.currentUser = null;
                 console.log('registration error');

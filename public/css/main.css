@@ -2934,7 +2934,7 @@ html, body {
   line-height: 50px;
 }
 
-/* line 15, ../modules/register/_register.scss */
+/* line 1, ../modules/home/_home.scss */
 .content-wrapper {
   position: relative;
   z-index: 2;
@@ -2945,33 +2945,33 @@ html, body {
   min-height: 460px;
 }
 @media screen and (min-width: 1200px) {
-  /* line 15, ../modules/register/_register.scss */
+  /* line 1, ../modules/home/_home.scss */
   .content-wrapper {
     width: 1118px;
   }
 }
 @media screen and (min-width: 1320px) {
-  /* line 15, ../modules/register/_register.scss */
+  /* line 1, ../modules/home/_home.scss */
   .content-wrapper {
     width: 1276px;
   }
 }
 @media screen and (min-width: 1440px) {
-  /* line 15, ../modules/register/_register.scss */
+  /* line 1, ../modules/home/_home.scss */
   .content-wrapper {
     width: 1380px;
   }
 }
-/* line 39, ../modules/register/_register.scss */
+/* line 25, ../modules/home/_home.scss */
 .content-wrapper .leftsec {
   border-right: 2px solid #ddd;
   height: 100%;
 }
-/* line 44, ../modules/register/_register.scss */
+/* line 30, ../modules/home/_home.scss */
 .content-wrapper .rightsec {
   height: 100%;
 }
-/* line 48, ../modules/register/_register.scss */
+/* line 34, ../modules/home/_home.scss */
 .content-wrapper .header {
   background: #eee;
   box-sizing: border-box;
@@ -2979,23 +2979,23 @@ html, body {
   position: relative;
   height: 60px;
 }
-/* line 55, ../modules/register/_register.scss */
+/* line 41, ../modules/home/_home.scss */
 .content-wrapper .header .user {
   width: calc(100% - 90px);
   height: 100%;
   min-width: 50px;
 }
-/* line 60, ../modules/register/_register.scss */
+/* line 46, ../modules/home/_home.scss */
 .content-wrapper .header .user .user-avatar {
   height: 40px;
   width: 40px;
 }
-/* line 70, ../modules/register/_register.scss */
+/* line 56, ../modules/home/_home.scss */
 .content-wrapper .header .controlls {
   min-width: 90px;
   height: 100%;
 }
-/* line 73, ../modules/register/_register.scss */
+/* line 59, ../modules/home/_home.scss */
 .content-wrapper .header .controlls .item {
   height: 40px;
   width: 40px;
@@ -3003,21 +3003,22 @@ html, body {
   color: #888;
   cursor: pointer;
 }
-/* line 83, ../modules/register/_register.scss */
+/* line 69, ../modules/home/_home.scss */
 .content-wrapper .user-list {
   height: calc(100% - 60px);
 }
-/* line 86, ../modules/register/_register.scss */
+/* line 72, ../modules/home/_home.scss */
 .content-wrapper .user-list .list-item {
   height: 70px;
   width: 100%;
+  cursor: pointer;
 }
-/* line 90, ../modules/register/_register.scss */
+/* line 77, ../modules/home/_home.scss */
 .content-wrapper .user-list .list-item .chat-avatar {
   width: 70px;
   height: 100%;
 }
-/* line 94, ../modules/register/_register.scss */
+/* line 81, ../modules/home/_home.scss */
 .content-wrapper .user-list .list-item .chat-avatar .avatar {
   height: 50px;
   width: 50px;
@@ -3028,35 +3029,75 @@ html, body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 107, ../modules/register/_register.scss */
+/* line 94, ../modules/home/_home.scss */
 .content-wrapper .user-list .list-item .chat-body {
   width: calc(100% - 70px);
   height: 100%;
   padding-top: 17px;
   padding-bottom: 17px;
 }
-/* line 113, ../modules/register/_register.scss */
+/* line 100, ../modules/home/_home.scss */
 .content-wrapper .user-list .list-item .chat-body .chat-main {
   font-weight: bold;
   font-size: 20px;
 }
-/* line 118, ../modules/register/_register.scss */
+/* line 105, ../modules/home/_home.scss */
 .content-wrapper .user-list .list-item .chat-body .chat-secondary {
   font-size: 15px;
 }
-/* line 126, ../modules/register/_register.scss */
+/* line 112, ../modules/home/_home.scss */
 .content-wrapper .message-wrapper {
   height: calc(100% - 60px);
   width: 100%;
 }
-/* line 130, ../modules/register/_register.scss */
+/* line 116, ../modules/home/_home.scss */
 .content-wrapper .message-wrapper .msg-main-container {
   width: inherit;
   height: calc(100% - 70px);
   overflow-y: auto;
   padding: 10px;
+  background: #E5DDD5;
 }
-/* line 137, ../modules/register/_register.scss */
+/* line 123, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msg {
+  width: 100%;
+  float: left;
+}
+/* line 127, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msg:after {
+  clear: both;
+}
+/* line 131, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msg > div {
+  border-radius: 5px;
+  padding: 5px 10px;
+  max-width: 60%;
+}
+/* line 136, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msg > div:after {
+  clear: both;
+}
+/* line 142, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msgin {
+  background-color: #fff;
+  float: left;
+  margin-bottom: 5px;
+}
+/* line 147, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msgin:after {
+  clear: both;
+}
+/* line 152, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msgout {
+  background-color: #dcf8c6;
+  margin-bottom: 5px;
+  float: right;
+}
+/* line 156, ../modules/home/_home.scss */
+.content-wrapper .message-wrapper .msg-main-container .msgout:after {
+  clear: both;
+}
+/* line 162, ../modules/home/_home.scss */
 .content-wrapper .message-wrapper .msg-framer {
   padding: 10px;
   width: inherit;
@@ -3064,12 +3105,12 @@ html, body {
   border-top: solid 2px #ddd;
   background: #f5f1ee;
 }
-/* line 144, ../modules/register/_register.scss */
+/* line 169, ../modules/home/_home.scss */
 .content-wrapper .message-wrapper .msg-framer .input-container {
   width: calc(100% - 70px);
   height: 50px;
 }
-/* line 148, ../modules/register/_register.scss */
+/* line 173, ../modules/home/_home.scss */
 .content-wrapper .message-wrapper .msg-framer .input-container input[type='text'] {
   border: 1px solid #eee;
   height: 50px;
@@ -3078,7 +3119,7 @@ html, body {
   width: 100%;
   border-radius: 5px;
 }
-/* line 158, ../modules/register/_register.scss */
+/* line 183, ../modules/home/_home.scss */
 .content-wrapper .message-wrapper .msg-framer .send-btn {
   width: 70px;
   height: 50px;
@@ -3086,9 +3127,9 @@ html, body {
   line-height: 50px;
   cursor: pointer;
 }
-/* line 165, ../modules/register/_register.scss */
+/* line 190, ../modules/home/_home.scss */
 .content-wrapper .message-wrapper .msg-framer .send-btn:hover {
-  background: #eee;
+  background: #ddd;
 }
 
 /* line 1, ../sass/partial/_util.scss */

@@ -3,17 +3,22 @@
 
     angular
         .module('chatApp')
-        .controller('HomeController', HomeController);
+        .controller('homeController', HomeController);
 
-    HomeController.$inject = ['$scope','$state', 'userService', 'socket'];
+    HomeController.$inject = ['$scope','$state', 'userService', 'socketService'];
     function HomeController($scope, $state, UserService, socket) {
         var vm = this;
         if(!UserService.currentUser){
             $state.go('login');
             return;
         }
-        vm.userList = UserService.userList;
-        
+
+        //establish socket connection
+        socket.connect(UserService.currentUser.id);
+
+        vm.UserService = UserService;
+
+       
         vm.gotoChat = function(userId){
             $state.go('home.chat',{userId:userId});
         };

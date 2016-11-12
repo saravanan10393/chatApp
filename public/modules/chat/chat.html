@@ -1,0 +1,22 @@
+<div class="header">
+	<h2 class="title">{{ChatCtrl.to.name}}</h2>
+</div>
+<div class="message-wrapper">
+	<div class="msg-main-container">
+		<div class="msg" ng-repeat="msg in ChatCtrl.messages">
+			<div ng-class="{'msgin': (msg.from != ChatCtrl.from.id), 'msgout' : (msg.from == ChatCtrl.from.id)}">
+				<span ng-bind="msg.message"></span>
+			</div>
+		</div>
+	</div>
+	<div class="msg-framer row m-0">
+		<form name="ChatCtrl.chatForm" ng-submit="ChatCtrl.send(ChatCtrl.txtMsg)">
+			<div class="input-container left">
+				<input type="text" name="msg" ng-model="ChatCtrl.txtMsg" placeholder="Enter your message here..." autofocus required>
+			</div>
+			<div class="send-btn left">
+				<span>SEND</span>
+			</div>
+		</form>
+	</div>
+</div>

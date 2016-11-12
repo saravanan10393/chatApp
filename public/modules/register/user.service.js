@@ -5,8 +5,8 @@
         .module('chatApp')
         .service('userService', UserService);
 
-    UserService.$inject = ['$http', 'urls', 'socket'];
-    function UserService($http, urls, socket) {
+    UserService.$inject = ['$http', 'urls', 'socketService', '$rootScope'];
+    function UserService($http, urls, socket, $rootScope) {
         var hosturl = urls.apiUrl;
         var User = this;
         this.currentUser = false;
@@ -31,11 +31,15 @@
         socket.on('userList', function (onlineUsers) {
             console.log('user list is ', onlineUsers);
             User.userList = onlineUsers;
+            $rootScope.$apply();
         });
 
         socket.on('newUser', function (user) {
             console.log('new user', user);
-            User.userList.unshift(user);
+            if(!_.findWhere(User.userList,{id : user.id})){
+                User.userList.unshift(user);
+                $rootScope.$apply();
+            }
         });
 
     }

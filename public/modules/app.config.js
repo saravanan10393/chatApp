@@ -23,12 +23,12 @@
                 url:'/home',
                 controller:'homeController',
                 controllerAs:'HomeCtrl',
-                templateUrl:'/modules/dashboard/home.html'
+                templateUrl:'/modules/home/home.html'
             })
             .state('home.chat', {
-                url:'/chat/:id',
+                url:'/chat/:userId',
                 controller:'chatController',
-                controllerAs:'chatCtrl',
+                controllerAs:'ChatCtrl',
                 templateUrl:'/modules/chat/chat.html'
             });
     });

@@ -5,13 +5,13 @@
         .module('chatApp')
         .service('socketService', SocketService);
 
-    SocketService.$inject = ['userService', 'urls', 'eventEmitter'];
+    SocketService.$inject = ['urls', 'eventEmitter'];
 
     function EventEmitter() {
 
     };
 
-    function SocketService(userService, urls, eventEmitter) {
+    function SocketService(urls, eventEmitter) {
 
         var connection = null;
 

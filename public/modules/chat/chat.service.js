@@ -5,22 +5,21 @@
         .module('chatApp')
         .service('ChatService', ChatService);
 
-    ChatService.$inject = ['userService','socket', 'urls'];
-    function ChatService(userService, socket, urls) {
+    ChatService.$inject = ['userService','socketService', 'urls','$http'];
+    function ChatService(userService, socket, urls, $http) {
         this.messages = [];
         var Chat = this;
-        
-        socket.on('message', function(message){
-            Chat.messages.push(message);
-        });
 
         this.sendMessage = function(message){
-            Chat.messages.push(message);
-            socket.emit('message', message);
+            socket.send('message', message);
         };
 
-        this.getMessages = function(){
-            return $http.get(urls.API_URL+'getMessages');
+        this.getMessages = function(data){
+            return $http({
+                url: urls.apiUrl+'messages',
+                method:'GET',
+                params: data
+            });
         };
 
         this.clearChat = function(){

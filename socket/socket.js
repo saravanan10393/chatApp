@@ -16,8 +16,8 @@ module.exports = function (io) {
         });
 
         socket.on('message',function(message){
-            db.Message.save(message, () => {
-                socket.broadcast.to(message.to).emit('message', message);
+            db.Message.save(message.data, () => {
+                socket.broadcast.to(message.data.to).emit('data', message);
             });
         });
 
