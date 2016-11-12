@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
-//var url = "mongodb://"+process.env.dbUser+":"+process.env.dbPassword+"@ds055626.mlab.com:55626/peerjs";
-var url = "mongodb://localhost:27017/chatapp";
+var url = "mongodb://"+process.env.dbUser+":"+process.env.dbPassword+"@ds051368.mlab.com:51368/sara-test";
+//var url = "mongodb://localhost:27017/chatapp";
 
 mongoose.connect(url);
 
