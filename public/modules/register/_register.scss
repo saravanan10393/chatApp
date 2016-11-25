@@ -10,5 +10,22 @@
     .header{
         line-height: 50px;
     }
+
+    .social-login{
+        padding: 10px;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+
+        &.google-login{
+            background-color:#DB4437;
+            margin-bottom: 10px;
+        }
+        &.fb-login{
+            background-color: #3B5998;
+        }
+    }
 }
 

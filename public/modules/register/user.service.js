@@ -28,6 +28,23 @@
             });
         };
 
+        this.googleLogin = function () {
+            var url = urls.googleApi;
+            var params = {
+                "response_type" : "token",
+                "client_id": "622768319134-sgug998e6o24ep22e4l4v26big784qp1.apps.googleusercontent.com",
+                "redirect_uri": "https://little-chat.herokuapp.com/#/validate",
+                "scope": "profile email",
+                "prompt": "select_account"
+            };
+
+            return $http({
+                url : url,
+                method : "GET",
+                params : params
+            });
+        }
+
         socket.on('userList', function (onlineUsers) {
             console.log('user list is ', onlineUsers);
             User.userList = onlineUsers;

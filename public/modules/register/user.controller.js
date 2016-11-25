@@ -13,6 +13,8 @@
 
         vm.register = register;
 
+        vm.googleLogin = googleLogin;
+
         function login() {
             userService.login({email:vm.email, password: vm.password}).then(function(success){
                 var data = success.data;
@@ -43,5 +45,13 @@
                 console.log('registration error');
             });
         };
+
+        function googleLogin() {
+            userService.googleLogin().then(function (data) { 
+                console.log('login success message ',data);
+             },function (error) { 
+                 console.log('error',error);
+              });
+        }
     }
 })();

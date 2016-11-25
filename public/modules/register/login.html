@@ -1,19 +1,27 @@
 <div class="ch-card register-wrapper">
-     <div class="header">
-          <h2 class="title">Little Chat</h2>
-     </div>
-    <form name="loginform" ng-submit="UserCtrl.login()">
-          <div class="form-group label-floating" ng-class="{'has-error':loginform.email.$invalid}">
-                <label for="email" class="control-label">Email</label>
-                <input type="email" class="form-control" ng-model="UserCtrl.email" id="email" name="email" required>
-          </div>
-          <div class="form-group label-floating" ng-class="{'has-error':loginform.password.$invalid}">
-                <label for="password" class="control-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" ng-model="UserCtrl.password" required>
-          </div>
-          <div class="form-group label-floating pt-0 mt-0 right-align">
-                <button class="btn btn-default" ui-sref="register">Signup</button>
-                <button class="btn btn-raised btn-info" ng-disabled="loginform.$invalid">Login</button>
-          </div>
-    </form>
+      <div class="header">
+            <h2 class="title">Little Chat</h2>
+      </div>
+      <form name="loginform" ng-submit="UserCtrl.login()">
+            <div class="form-group label-floating" ng-class="{'has-error':loginform.email.$invalid}">
+                  <label for="email" class="control-label">Email</label>
+                  <input type="email" class="form-control" ng-model="UserCtrl.email" id="email" name="email" required>
+            </div>
+            <div class="form-group label-floating" ng-class="{'has-error':loginform.password.$invalid}">
+                  <label for="password" class="control-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" ng-model="UserCtrl.password" required>
+            </div>
+            <div class="form-group label-floating pt-0 mt-0 right-align">
+                  <button class="btn btn-default" ui-sref="register">Signup</button>
+                  <button class="btn btn-raised btn-info" ng-disabled="loginform.$invalid">Login</button>
+            </div>
+      </form>
+      <div class="social-login-cotainer">
+            <div class="social-login google-login" ng-click="UserCtrl.googleLogin()">
+                  Google
+            </div>
+            <div class="social-login fb-login">
+                  Facebook
+            </div>
+      </div>
 </div>

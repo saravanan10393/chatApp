@@ -2933,6 +2933,24 @@ html, body {
 .register-wrapper .header {
   line-height: 50px;
 }
+/* line 14, ../modules/register/_register.scss */
+.register-wrapper .social-login {
+  padding: 10px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* line 22, ../modules/register/_register.scss */
+.register-wrapper .social-login.google-login {
+  background-color: #DB4437;
+  margin-bottom: 10px;
+}
+/* line 26, ../modules/register/_register.scss */
+.register-wrapper .social-login.fb-login {
+  background-color: #3B5998;
+}
 
 /* line 1, ../modules/home/_home.scss */
 .content-wrapper {

@@ -13,6 +13,11 @@
                 controllerAs:'UserCtrl',
                 templateUrl: '/modules/register/login.html'
             })
+            .state('validate', {
+                url: '/validate',
+                controller:'validationController',
+                templateUrl: '/modules/register/validation.html'
+            })
             .state('register', {
                 url: '/register',
                 controller:'userController',
