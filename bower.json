@@ -24,5 +24,8 @@
     "angular-tiny-eventemitter": "^1.2.0",
     "underscore": "^1.8.3",
     "angular-google-plus": "^0.1.3"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
   }
 }
