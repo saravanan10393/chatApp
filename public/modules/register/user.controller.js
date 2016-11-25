@@ -75,7 +75,7 @@
         function fbLogin(type) {
             FB.login(function (loginResponse) {
                 console.log('fb login response ', loginResponse);
-            })
+            },{scope: 'public_profile,email'});
         }
 
         function getUser(email) {
