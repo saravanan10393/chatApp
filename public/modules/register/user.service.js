@@ -33,7 +33,7 @@
             var params = {
                 "response_type" : "token",
                 "client_id": "622768319134-sgug998e6o24ep22e4l4v26big784qp1.apps.googleusercontent.com",
-                "redirect_uri": "https://little-chat.herokuapp.com/#/validate",
+                "redirect_uri": "https://little-chat.herokuapp.com",
                 "scope": "profile email",
                 "prompt": "select_account"
             };
