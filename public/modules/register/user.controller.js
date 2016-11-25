@@ -75,6 +75,13 @@
         function fbLogin(type) {
             FB.login(function (loginResponse) {
                 console.log('fb login response ', loginResponse);
+                if(loginResponse.status == "connected"){
+                    var accessToken = loginResponse.authResponse.accessToken;
+                    FB.api('/me', function(response) {
+                        console.log(JSON.stringify(response));
+                    });
+                }
+                
             },{scope: 'public_profile,email'});
         }
 
