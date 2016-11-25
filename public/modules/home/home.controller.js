@@ -25,6 +25,9 @@
 
         vm.signout = function () { 
             GooglePlus.logout();
+            FB.logout(function(response) {
+                // Person is now logged out
+            });
             UserService.currentUser = null;
             socket.disconnect();
             $state.go('login');

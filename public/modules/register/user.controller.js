@@ -77,7 +77,7 @@
                 console.log('fb login response ', loginResponse);
                 if(loginResponse.status == "connected"){
                     var accessToken = loginResponse.authResponse.accessToken;
-                    FB.api('/me', function(response) {
+                    FB.api('/'+loginResponse.authResponse.userID, function(response) {
                         console.log(JSON.stringify(response));
                     });
                 }
