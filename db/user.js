@@ -36,5 +36,16 @@ module.exports = {
         db.User.find({status:true}, function(err,users){
             callback( users || []);
         });
+    },
+
+    getByEmail : function (email, callback) { 
+        db.User.findOne({email : email},function (err, user) { 
+            if(err){
+                callback({error:true,message:'Failed to detailf for user '+email})
+                console.log('error ',err)
+            }else{
+                callback(user);
+            }
+         });
     }
 }

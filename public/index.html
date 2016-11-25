@@ -16,8 +16,28 @@
         <link rel="stylesheet" href="./libs/material-ripple/jquery.materialripple.css">
 
         <link href="css/main.css" rel="stylesheet">
+        <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
     </head>
     <body>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '1729892617337561',
+                xfbml      : true,
+                version    : 'v2.6',
+                cookie     : true
+                });
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
         <div class="app-container" ui-view>
             
         </div>
@@ -38,6 +58,7 @@
         <script src="./bower/angular-animate/angular-animate.js"></script>
         <script src="./bower/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="./bower/angular-toastr/dist/angular-toastr.js"></script>
+        <script src="./bower/angular-google-plus/dist/angular-google-plus.js"></script>
         <script src="./bower/angular-toastr/dist/angular-toastr.tpls.js"></script>
         <script src="./bower/angular-tiny-eventemitter/dist/angular-tiny-eventemitter.js"></script>
         <script src="./bower/underscore/underscore-min.js"></script>
@@ -52,6 +73,6 @@
         <script src="./modules/home/home.controller.js"></script>
         <script src="./modules/chat/chat.controller.js"></script>
         <script src="./modules/chat/chat.service.js"></script>
-       
+        
     </body>
 </html>

@@ -17,11 +17,10 @@
             </div>
       </form>
       <div class="social-login-cotainer">
-            <div class="social-login google-login" ng-click="UserCtrl.googleLogin()">
-                  Google
+            <div class="social-login google-login" ng-click="UserCtrl.googleLogin('login')">
+                  Login with Google
             </div>
-            <div class="social-login fb-login">
-                  Facebook
-            </div>
+            <fb:login-button class="social-login fb-login" scope="public_profile,email" onlogin="UserCtrl.checkFacebookLogin();" data-size="large">
+            </fb:login-button>
       </div>
 </div>
