@@ -20,7 +20,10 @@
             <div class="social-login google-login" ng-click="UserCtrl.googleLogin('login')">
                   Login with Google
             </div>
-            <fb:login-button class="social-login fb-login" scope="public_profile,email" onlogin="UserCtrl.checkFacebookLogin();" data-size="large">
-            </fb:login-button>
+             <div class="social-login fb-login" ng-click="UserCtrl.fbLogin('login')">
+                  Login with Facbook
+            </div>
+            <!--<fb:login-button class="social-login fb-login" scope="public_profile,email" onlogin="UserCtrl.checkFacebookLogin();" data-size="large">
+            </fb:login-button>-->
       </div>
 </div>

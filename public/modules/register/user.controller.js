@@ -17,6 +17,8 @@
 
         vm.googleLogin = googleLogin;
 
+        vm.fbLogin = fbLogin;
+
         vm.checkFacebookLogin = checkFacebookLogin;
 
         function login() {
@@ -68,6 +70,12 @@
             }, function (err) {
                 console.log(err);
             });
+        }
+
+        function fbLogin(type) {
+            FB.login(function (loginResponse) {
+                console.log('fb login response ', loginResponse);
+            })
         }
 
         function getUser(email) {
