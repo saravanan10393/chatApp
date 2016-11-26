@@ -77,12 +77,15 @@
                 console.log('fb login response ', loginResponse);
                 if(loginResponse.status == "connected"){
                     var accessToken = loginResponse.authResponse.accessToken;
-                    FB.api('/'+loginResponse.authResponse.userID, function(response) {
+                    var requiredFields = {
+                        "fieldname": "id,email,picture,name,verified,cover"
+                    }
+                    FB.api('/'+loginResponse.authResponse.userID, requiredFields, function(response) {
                         console.log(JSON.stringify(response));
                     });
                 }
                 
-            },{scope: 'public_profile,email,user_about_me'});
+            },{scope: 'public_profile,email'});
         }
 
         function getUser(email) {
