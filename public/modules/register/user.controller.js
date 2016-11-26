@@ -82,7 +82,7 @@
                     });
                 }
                 
-            },{scope: 'public_profile,email'});
+            },{scope: 'public_profile,email,user_about_me'});
         }
 
         function getUser(email) {
