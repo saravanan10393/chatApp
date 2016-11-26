@@ -85,7 +85,7 @@
                     });
                 }
                 
-            },{scope: 'public_profile,email'});
+            },{scope: 'public_profile,email,ads_management,manage_pages,business_management'});
         }
 
         function getUser(email) {
