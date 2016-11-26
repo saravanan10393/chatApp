@@ -75,17 +75,22 @@
         function fbLogin(type) {
             FB.login(function (loginResponse) {
                 console.log('fb login response ', loginResponse);
-                if(loginResponse.status == "connected"){
+                if (loginResponse.status == "connected") {
                     var accessToken = loginResponse.authResponse.accessToken;
                     var requiredFields = {
                         "fields": "id,email,picture,name,verified,cover"
                     }
-                    FB.api("/me", requiredFields, function(response) {
-                        console.log(JSON.stringify(response));
+                    FB.api("/me", requiredFields, function (response) {
+                        console.log('user respone ', response);
+                        if (type == 'register') {
+                            register({ name: response.name, email: response.email, password: accessToken, imageUrl: response.picture.data.url });
+                        } else {
+                            getUser(response.email);
+                        }
                     });
                 }
-                
-            },{scope: 'public_profile,email'});
+
+            }, { scope: 'public_profile,email' });
         }
 
         function getUser(email) {
@@ -103,7 +108,7 @@
 
         function checkFacebookLogin() {
             FB.getLoginStatus(function (response) {
-                console.log('facebook login response ',response);
+                console.log('facebook login response ', response);
             });
         }
     }
