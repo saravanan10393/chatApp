@@ -78,14 +78,14 @@
                 if(loginResponse.status == "connected"){
                     var accessToken = loginResponse.authResponse.accessToken;
                     var requiredFields = {
-                        "fieldname": "id,email,picture,name,verified,cover"
+                        "fields": "id,email,picture,name,verified,cover"
                     }
-                    FB.api('/'+loginResponse.authResponse.userID, requiredFields, function(response) {
+                    FB.api("/me", requiredFields, function(response) {
                         console.log(JSON.stringify(response));
                     });
                 }
                 
-            },{scope: 'public_profile,email,ads_management,manage_pages,business_management'});
+            },{scope: 'public_profile,email'});
         }
 
         function getUser(email) {
